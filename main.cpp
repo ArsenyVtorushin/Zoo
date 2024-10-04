@@ -30,15 +30,15 @@ class Table
 public:
 
 	Table() :
-		price_(456),
-		countOfLegs_(4),
-		width_(1),
-		height_(1),
-		depth_(1),
-		material_("wood"),
-		color_("pink"),
-		article_("re766"),
-		name_("Vladick")
+		price(456),
+		countOfLegs(4),
+		width(1),
+		height(1),
+		depth(1),
+		material("wood"), 
+		color("pink"),
+		article("re766"),
+		name("Vladick")
 	{}
 
 	Table
@@ -56,17 +56,17 @@ public:
 		std::string name
 	)
 	{
-		price_ = price;
-		countOfLegs_ = countOfLegs;
+		this->price = price;
+		this->countOfLegs = countOfLegs;
 
-		height_ = height;
-		width_ = width;
-		depth_ = depth;
+		this->height = height;
+		this->width = width;
+		this->depth = depth;
 
-		material_ = material;
-		color_ = color;
-		article_ = article;
-		name_ = name;
+		this->material = material;
+		this->color = color;
+		this->article = article;
+		this->name = name;
 	}
 
 
@@ -87,106 +87,106 @@ public:
 
 	float GetVolume()const
 	{
-		return width_ * height_ * depth_;
+		return this->width * this->height * this->depth;
 	}
 
 	int GetPrice()const
 	{
-		return price_;
+		return this->price;
 	}
 	void SetPrice(int newPrice)
 	{
-		price_ = newPrice;
+		this->price = newPrice;
 	}
 
 	int GetCountOfLegs()const
 	{
-		return countOfLegs_;
+		return this->countOfLegs;
 	}
 	void SetCountOfLegs(int newCountOfLegs)
 	{
-		countOfLegs_ = newCountOfLegs;
+		this->countOfLegs = newCountOfLegs;
 	}
 
 
 	float GetWidth()const
 	{
-		return width_;
+		return this->width;
 	}
 	void SetWidth(float newWidth)
 	{
-		width_ = newWidth;
+		this->width = newWidth;
 	}
 
 	float GetHeight()const
 	{
-		return height_;
+		return this->height;
 	}
 	void SetHeight(float newHeight)
 	{
-		height_ = newHeight;
+		this->height = newHeight;
 	}
 
 	float GetDepth()const
 	{
-		return depth_;
+		return this->depth;
 	}
 	void SetDepth(float newDepth)
 	{
-		depth_ = newDepth;
+		this->depth = newDepth;
 	}
 
 
 	std::string GetMaterial()const
 	{
-		return material_;
+		return this->material;
 	}
 	void SetMaterial(std::string newMaterial)
 	{
-		material_ = newMaterial;
+		this->material = newMaterial;
 	}
 
 	std::string GetColor()const
 	{
-		return color_;
+		return this->color;
 	}
 	void SetColor(std::string newColor)
 	{
-		color_ = newColor;
+		this->color = newColor;
 	}
 
 	std::string GetArticle()const
 	{
-		return article_;
+		return this->article;
 	}
 	void SetArticle(std::string newArticle)
 	{
-		article_ = newArticle;
+		this->article = newArticle;
 	}
 
 	std::string GetName()const
 	{
-		return name_;
+		return this->name;
 	}
 	void SetName(std::string newName)
 	{
-		name_ = newName;
+		this->name = newName;
 	}
 
 
 private:
 
-	int price_;
-	int countOfLegs_;
+	int price;
+	int countOfLegs;
 
-	float height_;
-	float width_;
-	float depth_;
+	float height;
+	float width;
+	float depth;
 
-	std::string material_;
-	std::string color_;
-	std::string article_;
-	std::string name_;
+	std::string material;
+	std::string color;
+	std::string article;
+	std::string name;
 
 };
 
@@ -194,47 +194,47 @@ private:
 class Cat
 {
 public:
-	Cat() :name_("Nurebeckc"), age_(1), sex_(false) {}
+	Cat() :name("Nurebeckc"), age(1), sex(false) {}
 
 	Cat(std::string name, int age, bool sex)
-		:name_(name),
-		age_(age),
-		sex_(sex)
+		:name(name),
+		age(age),
+		sex(sex)
 	{}
 
 	std::string GetName() const
 	{
-		return name_;
+		return this->name;
 	}
 	void SetName(std::string name) 
 	{ 
-		name_ = name; 
+		this->name = name;
 	}
 
 	int GetAge() const
 	{
-		return age_;
+		return this->age;
 	}
 	void SetAge(int age) 
 	{ 
-		age_ = age; 
+		this->age = age;
 	}
 
 	bool GetSex() const
 	{
-		return sex_;
+		return this->sex;
 	}
 	void SetSex(bool sex) 
 	{ 
-		sex_ = sex; 
+		this->sex = sex;
 	}
 
 	std::string Info()const 
 	{
 		std::string info;
-		info = "Name: " + name_ + ", ";
-		info += "Age: " + std::to_string(age_) + ", ";
-		info += "Sex: " + (sex_) ? "male" : "female";
+		info = "Name: " + this->name + ", ";
+		info += "Age: " + std::to_string(this->age) + ", ";
+		info += "Sex: " + (this->sex) ? "male" : "female";
 		return info;
 	}
 	// Связанные классы
@@ -245,9 +245,9 @@ public:
 	//
 
 private:
-	std::string name_;
-	int age_;
-	bool sex_;
+	std::string name;
+	int age;
+	bool sex;
 
 };
 //надо добавить способы хранить добавлять и удалять котов в гостинице
@@ -259,22 +259,22 @@ public:
 
 	ZooHotel() 
 	{
-		name_ = "Default hotel";
-		cats_ = nullptr;
-		countOfCats_ = 0;
+		this->name = "Default hotel";
+		this->cats = nullptr;
+		this->countOfCats = 0;
 	}
 
     // Конструктор копирования обязательно прописывается для классов, в которых управляет данными
-	//
+	
 	ZooHotel(const ZooHotel& other)
 	{
-		name_ = other.name_;
-		countOfCats_ = other.countOfCats_;
-		cats_ = new Cat[countOfCats_];
+		this->name = other.name;
+		this->countOfCats = other.countOfCats;
+		this->cats = new Cat[countOfCats];
 
-		for (int i = 0; i < countOfCats_; i++)
+		for (int i = 0; i < this->countOfCats; i++)
 		{
-			cats_[i] = other[i];
+			this->cats[i] = other[i];
 		}
 	}
 
@@ -282,88 +282,95 @@ public:
 
 	ZooHotel(ZooHotel&& other)
 	{
-		name_ = "Default hotel";
-		cats_ = nullptr;
-		countOfCats_ = 0;
-		std::swap(name_, other.name_);
-		std::swap(cats_, other.cats_);
-		std::swap(countOfCats_, other.countOfCats_);
+		this->name = "Default hotel";
+		this->cats = nullptr;
+		this->countOfCats = 0;
+		std::swap(this->name, other.name);
+		std::swap(this->cats, other.cats);
+		std::swap(this->countOfCats, other.countOfCats);
 	}
 
 	~ZooHotel()
 	{
-		if (cats_)
+		if (this->cats)
 		{
-			delete[] cats_;
+			delete[] this->cats;
 		}
 	}
 
 	void AddCat(Cat& newCat) 
 	{
-		if (!cats_)
+		if (!this->cats)
 		{
-			countOfCats_ += 1;
-			cats_ = new Cat[countOfCats_]{};
-			cats_[countOfCats_ - 1] = newCat;
+			this->countOfCats += 1;
+			this->cats = new Cat[countOfCats]{};
+			this->cats[countOfCats - 1] = newCat;
 		}
-		else {
-			auto tmp = new Cat[countOfCats_ + 1]{};
-			for (int i = 0; i < countOfCats_; i++)
+		else 
+		{
+			auto tmp = new Cat[countOfCats + 1]{};
+
+			for (int i = 0; i < countOfCats; i++)
 			{
-				tmp[i] = cats_[i];
+				tmp[i] = cats[i];
 			}
-			tmp[countOfCats_] = newCat;
-			countOfCats_ += 1;
-			std::swap(tmp, cats_);
+
+			tmp[countOfCats] = newCat;
+			this->countOfCats += 1;
+			std::swap(tmp, this->cats);
 			delete[] tmp;
 		}
 	}
 
 	void KickOut(int i) 
 	{
-		if (countOfCats_ == 1)
+		if (this->countOfCats == 1)
 		{
-			delete[]cats_;
-			cats_ = nullptr;
-			countOfCats_ = 0;
+			delete[] this->cats;
+			this->cats = nullptr;
+			this->countOfCats = 0;
 			return;
 		}
-		if (countOfCats_)
+		if (countOfCats)
 		{
-			auto tmp = new Cat[countOfCats_ - 1]{};
+			auto tmp = new Cat[countOfCats - 1]{};
+
 			for (int j = 0; j < i; j++)
 			{
-				tmp[j] = cats_[j];
+				tmp[j] = cats[j];
 			}
-			for (int j = i + 1; j < countOfCats_; j++)
+
+			for (int j = i + 1; j < countOfCats; j++)
 			{
-				tmp[j - 1] = cats_[j];
+				tmp[j - 1] = cats[j];
 			}
-			std::swap(tmp, cats_);
+
+			std::swap(tmp, this->cats);
 			delete[]tmp;
-			countOfCats_ -= 1;
+			this->countOfCats -= 1;
 		}
 	}
 
 	int size()const 
 	{
-		return countOfCats_;
+		return this->countOfCats;
 	}
 
 	Cat& operator[](int i) 
 	{
-		return  cats_[i];
+		return  this->cats[i];
 	}
 
 	const Cat& operator[](int i)const 
 	{
-		return  cats_[i];
+		return  this->cats[i];
 	}
 
 private:
-	std::string name_;
-	Cat* cats_;
-	int countOfCats_;
+
+	std::string name;
+	Cat* cats;
+	int countOfCats;
 };
 
 
